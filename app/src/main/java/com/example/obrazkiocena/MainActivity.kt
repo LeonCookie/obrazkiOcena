@@ -32,10 +32,11 @@ class MainActivity : AppCompatActivity() {
 
         widac.setOnCheckedChangeListener{ buttonView, isChecked ->
             if (isChecked){
-                mapa.setVisibility(View.INVISIBLE);
+
+                mapa.setVisibility(View.VISIBLE);
 
             }else{
-                mapa.setVisibility(View.VISIBLE);
+                mapa.setVisibility(View.INVISIBLE);
             }
 
             }
