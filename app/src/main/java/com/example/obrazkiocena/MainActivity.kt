@@ -4,10 +4,7 @@ import android.media.Image
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.ImageButton
-import android.widget.ImageView
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         lateinit var next: ImageButton
         lateinit var delete: ImageButton
         lateinit var mapa: ImageView
+
+        var  images = arrayListOf<Int>(R.drawable.cringe,R.drawable.what,R.drawable.shock,R.drawable.horny)
+        var i:Int = 0
 
         title="obrazy"
         widac = findViewById<CheckBox>(R.id.checkBoxWidok)
@@ -42,9 +42,24 @@ class MainActivity : AppCompatActivity() {
             }
 
         next.setOnClickListener {
+            if(i<4){
+                i++
+                mapa.setImageResource(images[i])
+            }else{
+                Toast.makeText(applicationContext, "ostatni obraz", Toast.LENGTH_SHORT ).show()
+                i=4
+            }
 
         }
         previous.setOnClickListener {
+            if(i>0){
+                i--
+                mapa.setImageResource(images[i])
+            }else{
+                Toast.makeText(applicationContext, "pierwszy obraz", Toast.LENGTH_SHORT ).show()
+                i=0
+            }
+
 
         }
         camera.setOnClickListener {
