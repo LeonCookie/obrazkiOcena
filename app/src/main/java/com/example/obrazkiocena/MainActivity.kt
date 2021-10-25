@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         delete.setOnClickListener {
+            mapa.setImageResource(0)
 
         }
     }
