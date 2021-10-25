@@ -93,4 +93,33 @@
         app:layout_constraintVertical_bias="0.037"
         app:srcCompat="@drawable/shock" />
 
+    <EditText
+        android:id="@+id/editTextNumberSkala"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/skala"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberObrot"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumberObrot"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938" />
+
+    <EditText
+        android:id="@+id/editTextNumberObrot"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/obrot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704"
+        android:importantForAutofill="no" />
+
 </android.support.constraint.ConstraintLayout>
