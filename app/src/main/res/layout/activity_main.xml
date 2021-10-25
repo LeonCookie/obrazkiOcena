@@ -91,7 +91,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/shock" />
+        app:srcCompat="@drawable/shock"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
 
     <EditText
         android:id="@+id/editTextNumberSkala"
@@ -105,7 +107,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintVertical_bias="0.938"
+         />
 
     <EditText
         android:id="@+id/editTextNumberObrot"
@@ -120,6 +123,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.704"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+       />
 
 </android.support.constraint.ConstraintLayout>
