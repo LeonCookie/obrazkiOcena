@@ -82,13 +82,14 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
-        android:id="@+id/imageViewMapa"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:id="@+id/imageViewObraek"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:layout_constraintVertical_bias="0.194"
+        app:srcCompat="@drawable/shock" />
+
 </android.support.constraint.ConstraintLayout>

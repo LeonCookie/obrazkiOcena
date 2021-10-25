@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var delete: ImageButton
         lateinit var mapa: ImageView
 
-        var  images = arrayListOf<Int>(R.drawable.cringe,R.drawable.what,R.drawable.shock,R.drawable.horny)
+        var  images = arrayListOf<Int>(R.drawable.shock,R.drawable.cringe,R.drawable.what,R.drawable.horny)
         var i:Int = 0
 
         title="obrazy"
@@ -27,27 +27,28 @@ class MainActivity : AppCompatActivity() {
         previous =findViewById<ImageButton>(R.id.imageButtonPrevious)
         next = findViewById<ImageButton>(R.id.imageButtonNext)
         delete = findViewById<ImageButton>(R.id.imageButtonDelete)
-        mapa = findViewById<ImageView>(R.id.imageViewMapa)
+        mapa = findViewById<ImageView>(R.id.imageViewObraek)
 
 
         widac.setOnCheckedChangeListener{ buttonView, isChecked ->
             if (isChecked){
 
-                mapa.setVisibility(View.VISIBLE);
+
+                mapa.setVisibility(View.INVISIBLE);
 
             }else{
-                mapa.setVisibility(View.INVISIBLE);
+                mapa.setVisibility(View.VISIBLE);
             }
 
             }
 
         next.setOnClickListener {
-            if(i<4){
+            if(i<3){
                 i++
                 mapa.setImageResource(images[i])
             }else{
                 Toast.makeText(applicationContext, "ostatni obraz", Toast.LENGTH_SHORT ).show()
-                i=4
+                i=3
             }
 
         }
