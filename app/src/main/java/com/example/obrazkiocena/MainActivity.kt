@@ -41,6 +41,18 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+        next.setOnClickListener {
+
+        }
+        previous.setOnClickListener {
+
+        }
+        camera.setOnClickListener {
+
+        }
+        delete.setOnClickListener {
+
+        }
     }
 
 
