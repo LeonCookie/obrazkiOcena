@@ -1,12 +1,20 @@
 package com.example.obrazkiocena
 
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
 import android.media.Image
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.*
 
+
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,8 +26,10 @@ class MainActivity : AppCompatActivity() {
         lateinit var delete: ImageButton
         lateinit var mapa: ImageView
 
+
         var  images = arrayListOf<Int>(R.drawable.shock,R.drawable.cringe,R.drawable.what,R.drawable.horny)
         var i:Int = 0
+
 
         title="obrazy"
         widac = findViewById<CheckBox>(R.id.checkBoxWidok)
@@ -64,13 +74,31 @@ class MainActivity : AppCompatActivity() {
 
         }
         camera.setOnClickListener {
+                var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(i, 123)
+
 
         }
         delete.setOnClickListener {
             mapa.setImageResource(0)
 
         }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        lateinit var mapa: ImageView
+        mapa = findViewById<ImageView>(R.id.imageViewObraek)
+
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==123){
+            var bmp = data?.extras?.get("data")as Bitmap
+            mapa.setImageBitmap(bmp)
+        }
     }
 
 
+
 }
+
+
