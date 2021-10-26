@@ -23,12 +23,14 @@ class MainActivity : AppCompatActivity() {
         lateinit var delete: ImageButton
         lateinit var mapa: ImageView
         lateinit var Suwak: SeekBar
+        lateinit var Skala: Button
+        lateinit var TextSkala: EditText
 
 
         var images =
             arrayListOf<Int>(R.drawable.shock, R.drawable.cringe, R.drawable.what, R.drawable.horny)
         var i: Int = 0
-        var r:Float
+        var s:Int
 
 
 
@@ -41,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         delete = findViewById<ImageButton>(R.id.imageButtonDelete)
         mapa = findViewById<ImageView>(R.id.imageViewObraek)
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
+        Skala = findViewById<Button>(R.id.buttonSkala)
+        TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
 
 
 
@@ -87,9 +91,17 @@ class MainActivity : AppCompatActivity() {
         }
         delete.setOnClickListener {
             mapa.setImageResource(0)
+        }
+        Skala.setOnClickListener{
+             s = TextSkala.text.toString().toInt()
+            if(s>0 && s<701) {
+                mapa.layoutParams.width = s
+                mapa.layoutParams.height = s
 
 
-
+            }else{
+                Toast.makeText(applicationContext, "Skala musi być większa od 1 i mniejsza od 700", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
