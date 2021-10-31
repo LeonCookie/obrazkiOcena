@@ -1,9 +1,11 @@
 package com.example.obrazkiocena
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -18,6 +20,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        findViewById<ImageButton>(R.id.imageButtonCamera).isEnabled = false
+        if(ActivityCompat.checkSelfPermission(this,android.Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions( this, arrayOf(android.Manifest.permission.CAMERA), 111)
+        }
+        else
+            findViewById<ImageButton>(R.id.imageButtonCamera).isEnabled = true
 
         lateinit var widac: CheckBox
         lateinit var camera: ImageButton
@@ -49,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
         Skala = findViewById<Button>(R.id.buttonSkala)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
+
+
 
 
 
@@ -88,7 +99,8 @@ class MainActivity : AppCompatActivity() {
 
         }
         camera.setOnClickListener {
-
+            var x = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(x,101)
 
 
         }
@@ -129,6 +141,30 @@ class MainActivity : AppCompatActivity() {
         })
 
 
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==101){
+            var pic = data?.getParcelableExtra<Bitmap>("data")
+            findViewById<ImageView>(R.id.imageViewObraek).setImageBitmap(pic)
+        }
+    }
+
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode == 111 && grantResults[0]== PackageManager.PERMISSION_GRANTED)
+        {
+            findViewById<ImageButton>(R.id.imageButtonCamera).isEnabled = true
+        }
     }
 
 

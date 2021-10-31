@@ -136,13 +136,12 @@
         android:max="10"
         android:min="0"
         android:progress="10"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberSkala"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <Button
         android:id="@+id/buttonSkala"
