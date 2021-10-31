@@ -116,7 +116,7 @@
         android:layout_marginBottom="2dp"
         android:max="500"
         android:min="1"
-        android:text="Obrót"
+        android:text="obr_t"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberSkala"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -135,6 +135,8 @@
         android:layout_height="44dp"
         android:max="10"
         android:min="0"
+        android:progress="10"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.373"

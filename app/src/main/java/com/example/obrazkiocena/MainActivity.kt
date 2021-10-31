@@ -4,12 +4,15 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
+import java.util.jar.Manifest
 
 
 class MainActivity : AppCompatActivity() {
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             arrayListOf<Int>(R.drawable.shock, R.drawable.cringe, R.drawable.what, R.drawable.horny)
         var i: Int = 0
         var s:Int
+        var l:Float
 
 
 
@@ -84,8 +88,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         camera.setOnClickListener {
-            var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(i, 123)
+
 
 
         }
@@ -94,13 +97,15 @@ class MainActivity : AppCompatActivity() {
         }
         Skala.setOnClickListener{
              s = TextSkala.text.toString().toInt()
-            if(s>0 && s<701) {
-                mapa.layoutParams.width = s
-                mapa.layoutParams.height = s
+
+            if(s>=1 && s<=360) {
+                mapa.rotation= s.toFloat()
+
+
 
 
             }else{
-                Toast.makeText(applicationContext, "Skala musi być większa od 1 i mniejsza od 700", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "zakres od 1 do 360", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -108,7 +113,10 @@ class MainActivity : AppCompatActivity() {
         Suwak.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int,fromUser: Boolean) {
 
-                mapa.setRotation(Suwak.progress.toFloat())
+                //mapa.setRotation(Suwak.progress.toFloat())
+
+                l = (progress.toFloat()/10)
+                mapa.alpha= l
 
             }
 
@@ -124,18 +132,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        lateinit var mapa: ImageView
-        mapa = findViewById<ImageView>(R.id.imageViewObraek)
 
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==123){
-            var bmp = data?.extras?.get("data")as Bitmap
-            mapa.setImageBitmap(bmp)
-        } else {
-            Toast.makeText(applicationContext, "nie zrobiono zdjecia", Toast.LENGTH_SHORT).show()
-        }
-    }
 
 
 
