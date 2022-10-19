@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var delete: ImageButton
         lateinit var mapa: ImageView
         lateinit var Suwak: SeekBar
+        lateinit var Naten: SeekBar
         lateinit var Skala: Button
         lateinit var TextSkala: EditText
         lateinit var ColorRed: Button
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         var i: Int = 0
         var s:Int
         var l:Float
-
+        var n:Float
 
         findViewById<Button>(R.id.buttonSkala)
 
@@ -57,7 +58,9 @@ class MainActivity : AppCompatActivity() {
         mapa = findViewById<ImageView>(R.id.imageViewObraek)
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
         Skala = findViewById<Button>(R.id.buttonSkala)
+        Naten = findViewById(R.id.seekBarNat)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
+
         ColorRed  = findViewById<Button>(R.id.buttonColorRed)
         ColorGreen= findViewById<Button>(R.id.buttonColorGreen)
         ColorBlue = findViewById<Button>(R.id.buttonColorBlue)
@@ -132,6 +135,23 @@ class MainActivity : AppCompatActivity() {
 
                 l = (progress.toFloat()/10)
                 mapa.alpha= l
+
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
+
+        })
+        Naten.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int,fromUser: Boolean) {
+
+               //natez
+
+                n = (progress.toFloat()/10)
+
 
             }
 

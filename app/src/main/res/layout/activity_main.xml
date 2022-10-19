@@ -195,4 +195,25 @@
         app:layout_constraintVertical_bias="0.22"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <SeekBar
+        android:id="@+id/seekBarNat"
+        android:layout_width="308dp"
+        android:layout_height="47dp"
+        android:max="10"
+        app:layout_constraintBottom_toTopOf="@+id/buttonColorGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Natezenie"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarNat"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
