@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         else
             findViewById<ImageButton>(R.id.imageButtonCamera).isEnabled = true
 
+
         lateinit var widac: CheckBox
         lateinit var camera: ImageButton
         lateinit var previous: ImageButton
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         var n:Float
 
         findViewById<Button>(R.id.buttonSkala)
-
+/*
         title = "Leon Rewers"
         widac = findViewById<CheckBox>(R.id.checkBoxWidok)
         camera = findViewById<ImageButton>(R.id.imageButtonCamera)
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity() {
         Skala = findViewById<Button>(R.id.buttonSkala)
         Naten = findViewById(R.id.seekBarNat)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
-
         ColorRed  = findViewById<Button>(R.id.buttonColorRed)
         ColorGreen= findViewById<Button>(R.id.buttonColorGreen)
         ColorBlue = findViewById<Button>(R.id.buttonColorBlue)
@@ -129,6 +129,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
         Suwak.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int,fromUser: Boolean) {
 
@@ -166,7 +167,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-       /* ColorRed.setOnClickListener{ //red color
+        ColorRed.setOnClickListener{ //red color
             MapaFilter.setBackgroundColor(Color.rgb(255, 0, 0))
         }
         ColorGreen.setOnClickListener {
