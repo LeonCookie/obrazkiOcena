@@ -3,6 +3,7 @@ package com.example.obrazkiocena
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var ColorGreen: Button
         lateinit var ColorBlue: Button
 
+        lateinit var MapaFilter: ImageView
         var images =
             arrayListOf<Int>(R.drawable.shock, R.drawable.cringe, R.drawable.what, R.drawable.horny)
         var i: Int = 0
@@ -64,8 +66,7 @@ class MainActivity : AppCompatActivity() {
         ColorRed  = findViewById<Button>(R.id.buttonColorRed)
         ColorGreen= findViewById<Button>(R.id.buttonColorGreen)
         ColorBlue = findViewById<Button>(R.id.buttonColorBlue)
-
-
+        MapaFilter = findViewById<ImageView>(R.id.ImageMapaColor)
 
 
 
@@ -145,13 +146,16 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+
+
         Naten.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int,fromUser: Boolean) {
 
-               //natez
+                //natez
 
                 n = (progress.toFloat()/10)
-
+                MapaFilter.alpha = n
 
             }
 
@@ -162,6 +166,29 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+       /* ColorRed.setOnClickListener{ //red color
+            MapaFilter.setBackgroundColor(Color.rgb(255, 0, 0))
+        }
+        ColorGreen.setOnClickListener {
+            MapaFilter.setBackgroundColor(Color.rgb(0, 255, 0))
+        }
+        ColorBlue.setOnClickListener { //blue color
+            MapaFilter.setBackgroundColor(Color.rgb(0, 0, 255))
+        }
+
+        */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
