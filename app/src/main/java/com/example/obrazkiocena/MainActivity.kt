@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         var n:Float
 
         findViewById<Button>(R.id.buttonSkala)
-/*
+
         title = "Leon Rewers"
         widac = findViewById<CheckBox>(R.id.checkBoxWidok)
         camera = findViewById<ImageButton>(R.id.imageButtonCamera)
@@ -61,14 +61,23 @@ class MainActivity : AppCompatActivity() {
         mapa = findViewById<ImageView>(R.id.imageViewObraek)
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
         Skala = findViewById<Button>(R.id.buttonSkala)
-        Naten = findViewById(R.id.seekBarNat)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
+
+        /*
+        Naten = findViewById<SeekBar>(R.id.seekBarNat)
+
+
         ColorRed  = findViewById<Button>(R.id.buttonColorRed)
         ColorGreen= findViewById<Button>(R.id.buttonColorGreen)
         ColorBlue = findViewById<Button>(R.id.buttonColorBlue)
         MapaFilter = findViewById<ImageView>(R.id.ImageMapaColor)
 
 
+
+         */
+
+
+        //Prawdopodobnie bład wyskakuje poniewaz acrivity nie zawiera nowych elementow czy cos takiego
 
 
 
@@ -149,7 +158,7 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-
+        /*
         Naten.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int,fromUser: Boolean) {
 
@@ -167,6 +176,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
         ColorRed.setOnClickListener{ //red color
             MapaFilter.setBackgroundColor(Color.rgb(255, 0, 0))
         }
@@ -177,7 +187,9 @@ class MainActivity : AppCompatActivity() {
             MapaFilter.setBackgroundColor(Color.rgb(0, 0, 255))
         }
 
-        */
+ */
+
+
 
 
 
