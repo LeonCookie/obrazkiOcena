@@ -3,15 +3,12 @@ package com.example.obrazkiocena
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
-import java.util.jar.Manifest
 
 
 class MainActivity : AppCompatActivity() {
@@ -59,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
         Skala = findViewById<Button>(R.id.buttonSkala)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
-        Kolor = findViewById<Button>(R.id.buttonColor)
+        Kolor = findViewById<Button>(R.id.buttonColorRed)
 
 
 
