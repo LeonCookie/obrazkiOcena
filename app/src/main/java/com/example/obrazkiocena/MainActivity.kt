@@ -3,6 +3,7 @@ package com.example.obrazkiocena
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var Suwak: SeekBar
         lateinit var Skala: Button
         lateinit var TextSkala: EditText
-
+        lateinit var Kolor: Button
 
         var images =
             arrayListOf<Int>(R.drawable.shock, R.drawable.cringe, R.drawable.what, R.drawable.horny)
@@ -46,9 +47,9 @@ class MainActivity : AppCompatActivity() {
         var l:Float
 
 
+        findViewById<Button>(R.id.buttonSkala)
 
-
-        title = "obrazy"
+        title = "Leon Rewers"
         widac = findViewById<CheckBox>(R.id.checkBoxWidok)
         camera = findViewById<ImageButton>(R.id.imageButtonCamera)
         previous = findViewById<ImageButton>(R.id.imageButtonPrevious)
@@ -58,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
         Skala = findViewById<Button>(R.id.buttonSkala)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
+        Kolor = findViewById<Button>(R.id.buttonColor)
 
 
 
