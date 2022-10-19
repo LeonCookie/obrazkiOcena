@@ -35,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         lateinit var Suwak: SeekBar
         lateinit var Skala: Button
         lateinit var TextSkala: EditText
-        lateinit var Kolor: Button
+        lateinit var ColorRed: Button
+        lateinit var ColorGreen: Button
+        lateinit var ColorBlue: Button
 
         var images =
             arrayListOf<Int>(R.drawable.shock, R.drawable.cringe, R.drawable.what, R.drawable.horny)
@@ -56,7 +58,9 @@ class MainActivity : AppCompatActivity() {
         Suwak = findViewById<SeekBar>(R.id.seekBar2)
         Skala = findViewById<Button>(R.id.buttonSkala)
         TextSkala = findViewById<EditText>(R.id.editTextNumberSkala)
-        Kolor = findViewById<Button>(R.id.buttonColorRed)
+        ColorRed  = findViewById<Button>(R.id.buttonColorRed)
+        ColorGreen= findViewById<Button>(R.id.buttonColorGreen)
+        ColorBlue = findViewById<Button>(R.id.buttonColorBlue)
 
 
 
